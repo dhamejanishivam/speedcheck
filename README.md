@@ -1,5 +1,3 @@
-# speedcheck
-
 # 🚀 Quantum Speed Test  
 ### Ultra-Precise Internet Speed Checker  
 
