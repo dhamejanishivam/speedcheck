@@ -25,4 +25,4 @@ Replace:
 your-username → Your GitHub username
 ```
 # → Live demo link
-[](https://speedcheck.shivamdhamejani.in/)
+https://speedcheck.shivamdhamejani.in/
