@@ -24,11 +24,4 @@ Free to use • No attribution required
 Replace:
 your-username → Your GitHub username
 # → Live demo link
-
-To use:
-1. Copy the entire block above
-2. Paste into a new `README.md` file
-3. Replace the placeholder text
-4. Save
-
-This keeps it clean, professional, and minimal while covering all essentials. The triple backticks ensure perfect formatting when copied directly to GitHub.
+https://speedcheck.shivamdhamejani.in
