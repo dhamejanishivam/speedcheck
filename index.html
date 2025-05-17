@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,48 +8,52 @@
     <link rel="icon" href="https://img.icons8.com/fluency/48/000000/console.png">
 
     <!-- Primary Meta Tags -->
-<meta name="title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
-<meta name="description" content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time with accurate results.">
-<meta name="keywords" content="speed test, internet speed, bandwidth test, network speed, terminal speed test, download speed, upload speed, ping test">
+    <meta name="title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
+    <meta name="description"
+        content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time with accurate results.">
+    <meta name="keywords"
+        content="speed test, internet speed, bandwidth test, network speed, terminal speed test, download speed, upload speed, ping test">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://speedtest.shivamdhamejani.in/">
-<meta property="og:title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
-<meta property="og:description" content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time.">
-<meta property="og:image" content="https://speedtest.shivamdhamejani.in/preview-image.jpg">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://speedtest.shivamdhamejani.in/">
+    <meta property="og:title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
+    <meta property="og:description"
+        content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time.">
+    <meta property="og:image" content="https://speedtest.shivamdhamejani.in/preview-image.jpg">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://speedtest.shivamdhamejani.in/">
-<meta property="twitter:title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
-<meta property="twitter:description" content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time.">
-<meta property="twitter:image" content="https://speedtest.shivamdhamejani.in/preview-image.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://speedtest.shivamdhamejani.in/">
+    <meta property="twitter:title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
+    <meta property="twitter:description"
+        content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time.">
+    <meta property="twitter:image" content="https://speedtest.shivamdhamejani.in/preview-image.jpg">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/000000/console.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/000000/console.png">
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://speedtest.shivamdhamejani.in">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://speedtest.shivamdhamejani.in">
 
-<!-- Mobile Specific -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<!-- Theme Color (For Mobile Browsers) -->
-<meta name="theme-color" content="#121212">
+    <!-- Theme Color (For Mobile Browsers) -->
+    <meta name="theme-color" content="#121212">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="https://img.icons8.com/fluency/180/000000/console.png">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/180/000000/console.png">
 
-<!-- Web Application Manifest -->
-<link rel="manifest" href="/site.webmanifest">
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
 
-<!-- DNS Prefetch -->
-<link rel="dns-prefetch" href="https://speed.cloudflare.com">
-<link rel="dns-prefetch" href="https://httpbin.org">
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://speed.cloudflare.com">
+    <link rel="dns-prefetch" href="https://httpbin.org">
 
-<!-- Structured Data (JSON-LD) -->
-<script type="application/ld+json">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -74,14 +79,14 @@
             --text: #e0e0e0;
             --glow: 0 0 10px rgba(0, 255, 157, 0.7);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Courier New', monospace;
         }
-        
+
         body {
             background: var(--bg);
             color: var(--text);
@@ -93,7 +98,7 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-        
+
         .terminal {
             width: 90%;
             max-width: 800px;
@@ -104,7 +109,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 20px;
         }
-        
+
         .terminal-header {
             background: #2a2a2a;
             padding: 8px 15px;
@@ -112,53 +117,61 @@
             align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .terminal-btn {
             width: 12px;
             height: 12px;
             border-radius: 50%;
             margin-right: 8px;
         }
-        
-        .btn-red { background: #ff5f56; }
-        .btn-yellow { background: #ffbd2e; }
-        .btn-green { background: #27c93f; }
-        
+
+        .btn-red {
+            background: #ff5f56;
+        }
+
+        .btn-yellow {
+            background: #ffbd2e;
+        }
+
+        .btn-green {
+            background: #27c93f;
+        }
+
         .terminal-title {
             flex-grow: 1;
             text-align: center;
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
         }
-        
+
         .terminal-body {
             padding: 20px;
             height: 400px;
             overflow-y: auto;
             position: relative;
         }
-        
+
         .prompt {
             color: var(--primary);
             margin-right: 10px;
         }
-        
+
         .command {
             color: var(--secondary);
         }
-        
+
         .output {
             margin: 15px 0;
             white-space: pre-wrap;
             line-height: 1.8;
         }
-        
+
         .speed-result {
             display: flex;
             align-items: center;
             margin: 10px 0;
         }
-        
+
         .speed-bar {
             height: 20px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
@@ -168,7 +181,7 @@
             overflow: hidden;
             box-shadow: var(--glow);
         }
-        
+
         .speed-bar::after {
             content: '';
             position: absolute;
@@ -176,37 +189,49 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, 
-                          transparent, 
-                          rgba(255, 255, 255, 0.2), 
-                          transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
             animation: shine 2s infinite;
         }
-        
+
         @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
+
         .blink {
             animation: blink 1s infinite;
         }
-        
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
-        
+
         .typed {
             border-right: 2px solid var(--primary);
             animation: blink 1s step-end infinite;
         }
-        
+
         .status {
             color: var(--accent);
             font-weight: bold;
         }
-        
+
         .progress-text {
             color: var(--secondary);
         }
@@ -235,9 +260,17 @@
         }
 
         @keyframes loading-pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
+            0% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.7;
+            }
         }
 
         .analyzing-text {
@@ -259,12 +292,22 @@
         }
 
         @keyframes dot-pulse {
-            0%, 100% { content: '.'; }
-            33% { content: '..'; }
-            66% { content: '...'; }
+
+            0%,
+            100% {
+                content: '.';
+            }
+
+            33% {
+                content: '..';
+            }
+
+            66% {
+                content: '...';
+            }
         }
 
-        
+
         .start-btn {
             background: var(--terminal);
             color: var(--primary);
@@ -278,24 +321,196 @@
             box-shadow: var(--glow);
             margin-top: 20px;
         }
-        
+
         .start-btn:hover {
             background: rgba(0, 255, 157, 0.1);
             transform: translateY(-2px);
         }
-        
-        @media (max-width: 768px) {
+
+        /* ===== Mobile Responsiveness ===== */
+        @media only screen and (max-width: 768px) {
             .terminal {
                 width: 95%;
+                height: auto;
+                min-height: 60vh;
+                max-height: 80vh;
             }
-            
+
             .terminal-body {
+                height: auto;
+                max-height: calc(60vh - 60px);
                 padding: 15px;
-                height: 350px;
+                font-size: 14px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
+
+            .speed-result {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .speed-bar {
+                margin-left: 0;
+                margin-top: 8px;
+                width: 100% !important;
+            }
+
+            .terminal-loading {
+                width: 80px;
+                margin-left: 5px;
+            }
+
+            .start-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                max-width: 300px;
+            }
+
+            footer {
+                font-size: 0.5rem !important;
+                padding: 8px 0;
+                position: relative;
+                bottom: auto;
+                margin-top: 40px;
+            }
+
+            .start-btn {
+                position: fixed;
+                bottom: 50px;
+                left: 50%;
+                transform: translateX(-50%) !important;
+                width: 90%;
+                max-width: 300px;
+                margin: 0 auto;
+                z-index: 100;
+                box-shadow: 0 0 15px rgba(0, 255, 157, 0.5);
+            }
+
+
+        }
+
+        @media only screen and (max-width: 480px) {
+            .terminal-title {
+                font-size: 0.7rem;
+            }
+
+            .output,
+            .command {
+                line-height: 1.5;
+            }
+
+            .analyzing-text {
+                display: block;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+
+            .terminal-header {
+                padding: 6px 10px;
+            }
+
+            .terminal-title {
+                font-size: 0.65rem;
+            }
+
+            #command-line {
+                font-size: 0.9rem;
+            }
+
+            .terminal-body {
+                padding: 12px;
+            }
+        }
+
+        #terminal>.output:first-child {
+            display: flex;
+            align-items: center;
+        }
+
+        .prompt {
+            margin-right: 8px;
+            white-space: nowrap;
+            /* Prevents wrapping */
+            flex-shrink: 0;
+            /* Prevents shrinking */
+        }
+
+        .command {
+            word-break: break-all;
+            /* Ensures text wraps properly */
+        }
+
+        #terminal>.output {
+            margin-left: 0;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .prompt {
+            margin-right: 8px;
+            float: left;
+            /* Makes prompt stay left */
+        }
+
+        .command {
+            display: inline-block;
+            text-align: left;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+
+        /* Remove any existing margins/padding that might be centering it */
+        #terminal {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .command-line {
+            margin-top: 30px;
+            clear: both;
+        }
+
+        .command-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--secondary);
+            font-family: 'Courier New', monospace;
+            font-size: inherit;
+            width: 60%;
+            caret-color: var(--primary);
+            display: inline-block;
+        }
+
+        .command-input::placeholder {
+            color: rgba(0, 184, 255, 0.5);
+        }
+
+        #command-display {
+            display: none;
+        }
+
+        .command-input.command-line {
+            margin: 0;
+            padding: 0;
+            width: calc(100% - 120px);
+            /* Adjust based on prompt width */
+
+        }
+
+        #xxx {
+            /* background-color: green; */
+            display: flex;
         }
     </style>
 </head>
+
 <body>
     <div class="terminal">
         <div class="terminal-header">
@@ -307,10 +522,18 @@
         <div class="terminal-body" id="terminal">
             <div class="output">Welcome to Quantum Speed Test Terminal</div>
             <div class="output">Type "sudo speedtest --start" or click button below</div>
-            <div class="output" style="margin-top: 30px;">
+
+
+
+            <div class="output command-line" id="xxx">
                 <span class="prompt">root@quantum:~#</span>
-                <span class="command typed" id="command-line"></span>
+
+                <span class="command" id="command-display"></span>
+                <input type="text" id="command-input" class="command-input command-line" autocomplete="off"
+                    spellcheck="false">
             </div>
+
+
         </div>
     </div>
 
@@ -327,25 +550,48 @@
     color: rgba(255,255,255,0.5);
     background: linear-gradient(transparent, rgba(0,0,0,0.3));
 ">
-    © 2025 Internet Speed Test | Designed by Shivam Dhamejani
-</footer>
+        © 2025 Internet Speed Test | Designed by Shivam Dhamejani
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Global flag to track test state
+        let testInProgress = false;
+
+        const commandInput = document.getElementById('command-input');
+        commandInput.focus()
+        const commandDisplay = document.getElementById('command-display');
+        const startBtn = document.getElementById('startTest');
+
+        // Handle terminal commands
+        // Replace your existing command input handler with this:
+        
+        // Focus input on page load
+        commandInput.focus();
+
+        // Update the button click handler to hide input during test
+        const originalStartTest = startTest;
+        startTest = function () {
+            commandInput.style.display = 'none';
+            commandDisplay.style.display = 'inline';
+            commandDisplay.textContent = 'sudo speedtest --start --turbo';
+            originalStartTest();
+        };
+
+
+        document.addEventListener('DOMContentLoaded', function () {
             const terminal = document.getElementById('terminal');
             const startBtn = document.getElementById('startTest');
-            const commandLine = document.getElementById('command-line');
             let testInProgress = false;
-            
+
             // Optimized test files (single larger file for accuracy)
-            const downloadTestFile = { 
+            const downloadTestFile = {
                 url: 'https://speed.cloudflare.com/__down?bytes=20000000', // 20MB single test
                 size: 20
             };
-            
+
             const uploadEndpoint = 'https://httpbin.org/post';
             const uploadTestSize = 10; // 10MB upload test
-            
+
             function typeText(element, text, speed, callback) {
                 let i = 0;
                 element.innerHTML = '';
@@ -361,28 +607,28 @@
                     }
                 }, speed);
             }
-            
+
             function addLine(text, prompt = 'root@quantum:~# ', className = '') {
                 const line = document.createElement('div');
                 line.className = 'output ' + className;
-                
+
                 if (prompt) {
                     const promptSpan = document.createElement('span');
                     promptSpan.className = 'prompt';
                     promptSpan.textContent = prompt;
                     line.appendChild(promptSpan);
                 }
-                
+
                 const textSpan = document.createElement('span');
                 textSpan.className = 'command';
                 textSpan.textContent = text;
                 line.appendChild(textSpan);
-                
+
                 terminal.appendChild(line);
                 terminal.scrollTop = terminal.scrollHeight;
                 return textSpan;
             }
-            
+
             function addOutput(text, className = '') {
                 const output = document.createElement('div');
                 output.className = 'output ' + className;
@@ -391,54 +637,55 @@
                 terminal.scrollTop = terminal.scrollHeight;
                 return output;
             }
-            
+
             function showSpeedResult(label, speed) {
                 const result = document.createElement('div');
                 result.className = 'output speed-result';
-                
+
                 const labelSpan = document.createElement('span');
                 labelSpan.textContent = label + ': ';
                 labelSpan.style.color = 'var(--text)';
                 result.appendChild(labelSpan);
-                
+
                 const valueSpan = document.createElement('span');
                 valueSpan.textContent = speed.toFixed(2) + ' Mbps';
                 valueSpan.style.color = 'var(--primary)';
                 valueSpan.style.fontWeight = 'bold';
                 result.appendChild(valueSpan);
-                
+
                 const bar = document.createElement('div');
                 bar.className = 'speed-bar';
                 bar.style.width = Math.min(speed / 100 * 100, 100) + '%';
                 result.appendChild(bar);
-                
+
                 terminal.appendChild(result);
                 terminal.scrollTop = terminal.scrollHeight;
             }
-            
+
             function startTest() {
                 if (testInProgress) return;
                 testInProgress = true;
                 startBtn.disabled = true;
-                
-                // Clear previous results
+                // Clear previous results but keep the first 3 lines (welcome message and prompt)
                 while (terminal.children.length > 3) {
                     terminal.removeChild(terminal.lastChild);
                 }
-                
-                typeText(commandLine, 'sudo speedtest --start --turbo', 50, () => {
-                    setTimeout(() => {
-                        addOutput('\n[!] ADMIN PRIVILEGES GRANTED', 'status');
-                        addOutput('Initializing high-speed quantum measurement...\n');
-                        
-                        testDownload();
-                    }, 500);
-                });
+
+                const commandDisplay = document.getElementById('command-display');
+                commandDisplay.textContent = 'sudo speedtest --start --turbo';
+                commandDisplay.style.display = 'inline';
+                commandInput.style.display = 'none';
+
+                setTimeout(() => {
+                    addOutput('\n[!] ADMIN PRIVILEGES GRANTED', 'status');
+                    addOutput('Initializing high-speed quantum measurement...\n');
+                    testDownload();
+                }, 500);
             }
-            
+
             async function testDownload() {
                 addOutput('[1/2] Running TURBO DOWNLOAD test...', 'status');
-                
+
                 const progress = addOutput(`  Testing with 20MB file... `);
                 const progressText = document.createElement('span');
                 progressText.className = 'progress-text';
@@ -461,25 +708,25 @@
                 try {
                     const fileSizeBytes = downloadTestFile.size * 1024 * 1024;
                     const startTime = performance.now();
-                    
+
                     await downloadFile(downloadTestFile.url, (loaded, total) => {
                         const percent = (loaded / total * 100).toFixed(1);
                         progressText.textContent = `${percent}%`;
                         loadingBarInner.style.width = `${percent}%`;
                     });
-                    
+
                     const endTime = performance.now();
                     const duration = (endTime - startTime) / 1000;
                     const speed = (fileSizeBytes * 8) / (duration * 1024 * 1024);
-                    
+
                     // Finalize loading display
                     loadingBarInner.style.width = '100%';
                     loadingBarInner.style.background = 'var(--primary)';
                     progressText.textContent = `COMPLETE (${speed.toFixed(2)} Mbps)`;
                     analyzing.textContent = 'Done!';
-                    
+
                     showSpeedResult('DOWNLOAD SPEED', speed);
-                    
+
                     await new Promise(resolve => setTimeout(resolve, 800));
                     testUpload(speed);
                 } catch (error) {
@@ -492,7 +739,7 @@
 
             async function testUpload(downloadSpeed) {
                 addOutput('\n[2/2] Running TURBO UPLOAD test...', 'status');
-                
+
                 const progress = addOutput(`  Uploading 10MB file... `);
                 const progressText = document.createElement('span');
                 progressText.className = 'progress-text';
@@ -516,25 +763,25 @@
                     const fileSizeBytes = uploadTestSize * 1024 * 1024;
                     const testData = generateRandomData(uploadTestSize);
                     const startTime = performance.now();
-                    
+
                     await uploadFile(testData, uploadEndpoint, (loaded, total) => {
                         const percent = (loaded / total * 100).toFixed(1);
                         progressText.textContent = `${percent}%`;
                         loadingBarInner.style.width = `${percent}%`;
                     });
-                    
+
                     const endTime = performance.now();
                     const duration = (endTime - startTime) / 1000;
                     const speed = (fileSizeBytes * 8) / (duration * 1024 * 1024);
-                    
+
                     // Finalize loading display
                     loadingBarInner.style.width = '100%';
                     loadingBarInner.style.background = 'var(--primary)';
                     progressText.textContent = `COMPLETE (${speed.toFixed(2)} Mbps)`;
                     analyzing.textContent = 'Done!';
-                    
+
                     showSpeedResult('UPLOAD SPEED', speed);
-                    
+
                     await new Promise(resolve => setTimeout(resolve, 800));
                     testPing(downloadSpeed, speed);
                 } catch (error) {
@@ -544,21 +791,21 @@
                     testComplete();
                 }
             }
-            
+
             async function testPing(downloadSpeed, uploadSpeed) {
                 addOutput('\n[3/3] Running PING test...', 'status');
-                
+
                 const pingTestUrl = 'https://httpbin.org/get';
                 let pingSum = 0;
                 let validPings = 0;
-                
+
                 // Quick ping test (3 attempts)
                 for (let i = 0; i < 3; i++) {
-                    const progress = addOutput(`  Ping attempt ${i+1}... `);
+                    const progress = addOutput(`  Ping attempt ${i + 1}... `);
                     const progressText = document.createElement('span');
                     progressText.className = 'progress-text';
                     progress.appendChild(progressText);
-                    
+
                     try {
                         const startTime = performance.now();
                         await fetch(pingTestUrl, {
@@ -568,55 +815,55 @@
                         });
                         const endTime = performance.now();
                         const ping = endTime - startTime;
-                        
+
                         pingSum += ping;
                         validPings++;
                         progressText.textContent = `${ping.toFixed(2)} ms`;
                     } catch (error) {
                         progressText.textContent = 'TIMEOUT';
                     }
-                    
+
                     await new Promise(resolve => setTimeout(resolve, 300));
                 }
-                
+
                 const avgPing = validPings > 0 ? pingSum / validPings : 0;
-                
+
                 const result = document.createElement('div');
                 result.className = 'output speed-result';
-                
+
                 const labelSpan = document.createElement('span');
                 labelSpan.textContent = 'PING: ';
                 labelSpan.style.color = 'var(--text)';
                 result.appendChild(labelSpan);
-                
+
                 const valueSpan = document.createElement('span');
                 valueSpan.textContent = avgPing.toFixed(2) + ' ms';
                 valueSpan.style.color = 'var(--primary)';
                 valueSpan.style.fontWeight = 'bold';
                 result.appendChild(valueSpan);
-                
+
                 terminal.appendChild(result);
-                
+
                 addOutput('\n[!] QUANTUM SPEED TEST COMPLETE', 'status');
                 addOutput(`► Download: ${downloadSpeed.toFixed(2)} Mbps`);
                 addOutput(`► Upload: ${uploadSpeed.toFixed(2)} Mbps`);
                 addOutput(`► Ping: ${avgPing.toFixed(2)} ms`);
                 addOutput('\nType "sudo speedtest --start" to run again\n');
-                
+
                 testComplete();
             }
-            
+
             function testComplete() {
                 testInProgress = false;
                 startBtn.disabled = false;
             }
-            
+
             function downloadFile(url, progressCallback) {
                 return new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', url + '&nocache=' + Date.now(), true);
                     xhr.responseType = 'blob';
-                    
+
                     if (progressCallback) {
                         xhr.onprogress = (event) => {
                             if (event.lengthComputable) {
@@ -624,7 +871,7 @@
                             }
                         };
                     }
-                    
+
                     xhr.onload = () => {
                         if (xhr.status >= 200 && xhr.status < 300) {
                             resolve(xhr.response);
@@ -632,18 +879,18 @@
                             reject(new Error(`Download failed with status ${xhr.status}`));
                         }
                     };
-                    
+
                     xhr.onerror = () => reject(new Error('Download failed'));
                     xhr.send();
                 });
             }
-            
+
             function uploadFile(data, url, progressCallback) {
                 return new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
                     xhr.open('POST', url, true);
                     xhr.setRequestHeader('Content-Type', 'application/octet-stream');
-                    
+
                     if (progressCallback) {
                         xhr.upload.onprogress = (event) => {
                             if (event.lengthComputable) {
@@ -651,7 +898,7 @@
                             }
                         };
                     }
-                    
+
                     xhr.onload = () => {
                         if (xhr.status >= 200 && xhr.status < 300) {
                             resolve();
@@ -659,12 +906,12 @@
                             reject(new Error(`Upload failed with status ${xhr.status}`));
                         }
                     };
-                    
+
                     xhr.onerror = () => reject(new Error('Upload failed'));
                     xhr.send(data);
                 });
             }
-            
+
             function generateRandomData(sizeInMB) {
                 const size = sizeInMB * 1024 * 1024;
                 const data = new Uint8Array(size);
@@ -673,9 +920,35 @@
                 }
                 return data;
             }
-            
+
             startBtn.addEventListener('click', startTest);
+            commandInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = commandInput.value.trim();
+                commandInput.style.display = 'none';
+                commandDisplay.textContent = command;
+                commandDisplay.style.display = 'inline';
+
+                if (command.toLowerCase() === 'sudo speedtest --start' ||
+                    command.toLowerCase() === 'sudo speedtest --start --turbo') {
+                    // Properly trigger the test
+                    startTest();
+                } else {
+                    commandDisplay.textContent = 'Command not found. Type "sudo speedtest --start"';
+                    commandDisplay.style.color = 'var(--accent)';
+
+                    setTimeout(() => {
+                        commandInput.value = '';
+                        commandInput.style.display = 'inline';
+                        commandDisplay.style.display = 'none';
+                        commandDisplay.style.color = 'var(--secondary)';
+                        commandInput.focus();
+                    }, 2000);
+                }
+            }
+        });
         });
     </script>
 </body>
+
 </html>
