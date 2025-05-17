@@ -1,491 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TERMINAL SPEED TEST v3.0</title>
+    <link rel="icon" href="https://img.icons8.com/fluency/48/000000/console.png">
 
+    <!-- Primary Meta Tags -->
+<meta name="title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
+<meta name="description" content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time with accurate results.">
+<meta name="keywords" content="speed test, internet speed, bandwidth test, network speed, terminal speed test, download speed, upload speed, ping test">
 
-    <title>Quantum Internet Speed Test</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
-    <link rel="icon" href="https://img.icons8.com/fluency/48/000000/speed.png" type="image/png">
-    <meta name="description" content="Accurate internet speed test tool with beautiful visualization">
-    <meta name="keywords" content="speed test, internet speed, bandwidth test, network test">
-    <meta name="author" content="Your Name">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://speedtest.shivamdhamejani.in/">
+<meta property="og:title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
+<meta property="og:description" content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time.">
+<meta property="og:image" content="https://speedtest.shivamdhamejani.in/preview-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://speedtest.shivamdhamejani.in/">
+<meta property="twitter:title" content="Quantum Speed Test | Terminal-Style Internet Speed Checker">
+<meta property="twitter:description" content="Test your internet speed with our futuristic terminal-style speed test. Measures download, upload speeds and ping in real-time.">
+<meta property="twitter:image" content="https://speedtest.shivamdhamejani.in/preview-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/000000/console.png">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://speedtest.shivamdhamejani.in">
+
+<!-- Mobile Specific -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Theme Color (For Mobile Browsers) -->
+<meta name="theme-color" content="#121212">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" href="https://img.icons8.com/fluency/180/000000/console.png">
+
+<!-- Web Application Manifest -->
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="https://speed.cloudflare.com">
+<link rel="dns-prefetch" href="https://httpbin.org">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Quantum Speed Test",
+  "description": "Terminal-style internet speed testing tool",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
     <style>
         :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --accent: #fd79a8;
-            --dark: #2d3436;
-            --light: #f5f6fa;
-            --success: #00b894;
-            --warning: #fdcb6e;
-            --error: #d63031;
+            --primary: #00ff9d;
+            --secondary: #00b8ff;
+            --accent: #ff00aa;
+            --bg: #121212;
+            --terminal: #1e1e1e;
+            --text: #e0e0e0;
+            --glow: 0 0 10px rgba(0, 255, 157, 0.7);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Courier New', monospace;
         }
-
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow-x: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--light), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .description {
-            margin-bottom: 2rem;
-            opacity: 0.9;
             line-height: 1.6;
         }
-
-        .speed-test-container {
-            position: relative;
-            margin: 2rem 0;
-        }
-
-        .speedometer {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .speedometer-circle {
-            width: 100%;
-            height: 100%;
-            border: 15px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .speedometer-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: conic-gradient(var(--success) 0% 33%,
-                    var(--warning) 33% 66%,
-                    var(--error) 66% 100%);
-            clip-path: circle(47% at 50% 50%);
-            transform: rotate(-90deg);
-            transform-origin: center;
-            transition: transform 1s cubic-bezier(0.17, 0.67, 0.21, 0.99);
-        }
-
-        .speedometer-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .speed-value {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, var(--light), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .speed-unit {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        .speed-labels {
-            display: flex;
-            justify-content: space-between;
+        
+        .terminal {
             width: 90%;
-            margin: 0 auto;
-            position: relative;
+            max-width: 800px;
+            background: var(--terminal);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
         }
-
-        .speed-label {
-            position: relative;
-            text-align: center;
-            flex: 1;
-        }
-
-        .speed-label::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .test-info {
+        
+        .terminal-header {
+            background: #2a2a2a;
+            padding: 8px 15px;
             display: flex;
-            justify-content: space-around;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 1.5rem;
-            min-width: 150px;
-            margin: 0.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+        
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
         }
-
-        .info-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-title {
+        
+        .btn-red { background: #ff5f56; }
+        .btn-yellow { background: #ffbd2e; }
+        .btn-green { background: #27c93f; }
+        
+        .terminal-title {
+            flex-grow: 1;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
-            opacity: 0.7;
-            margin-bottom: 0.5rem;
         }
-
-        .info-value {
-            font-size: 1.5rem;
-            font-weight: 600;
+        
+        .terminal-body {
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            position: relative;
         }
-
-        .btn {
-            background: linear-gradient(to right, var(--accent), #e84393);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        
+        .prompt {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .command {
+            color: var(--secondary);
+        }
+        
+        .output {
+            margin: 15px 0;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        
+        .speed-result {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .speed-bar {
+            height: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+            margin-left: 15px;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--glow);
         }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(253, 121, 168, 0.6);
-        }
-
-        .btn:active {
-            transform: translateY(1px);
-        }
-
-        .btn::after {
+        
+        .speed-bar::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
-            transform: translateX(-100%);
-            transition: transform 0.4s;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                          transparent, 
+                          rgba(255, 255, 255, 0.2), 
+                          transparent);
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .typed {
+            border-right: 2px solid var(--primary);
+            animation: blink 1s step-end infinite;
+        }
+        
+        .status {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .progress-text {
+            color: var(--secondary);
         }
 
-        .btn:hover::after {
-            transform: translateX(0);
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 10px;
+        /* New terminal loading bar styles */
+        .terminal-loading {
+            display: inline-block;
+            width: 100px;
+            height: 12px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            margin: 2rem 0;
+            border-radius: 3px;
             overflow: hidden;
+            margin-left: 10px;
+            vertical-align: middle;
+            position: relative;
         }
 
-        .progress-bar {
+        .terminal-loading-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
             height: 100%;
             width: 0%;
-            background: linear-gradient(to right, var(--accent), #e84393);
-            border-radius: 5px;
-            transition: width 0.3s;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            animation: loading-pulse 1.5s infinite;
         }
 
-        .status-message {
-            margin: 1rem 0;
-            font-size: 1.1rem;
-            min-height: 1.5rem;
+        @keyframes loading-pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
         }
 
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        .analyzing-text {
+            color: var(--secondary);
+            font-style: italic;
+            display: inline-block;
+            margin-left: 10px;
         }
 
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: float linear infinite;
+        .analyzing-dots {
+            display: inline-block;
+            width: 20px;
+            text-align: left;
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
+        .analyzing-dots::after {
+            content: '...';
+            animation: dot-pulse 1.5s infinite;
         }
 
-        footer {
-            margin-top: 2rem;
-            opacity: 0.7;
-            font-size: 0.9rem;
-            text-align: center;
+        @keyframes dot-pulse {
+            0%, 100% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
         }
 
+        
+        .start-btn {
+            background: var(--terminal);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 12px 25px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--glow);
+            margin-top: 20px;
+        }
+        
+        .start-btn:hover {
+            background: rgba(0, 255, 157, 0.1);
+            transform: translateY(-2px);
+        }
+        
         @media (max-width: 768px) {
-            .container {
+            .terminal {
                 width: 95%;
-                padding: 1.5rem;
             }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .speedometer {
-                width: 200px;
-                height: 200px;
-            }
-
-            .speed-value {
-                font-size: 2.5rem;
-            }
-
-            .test-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .info-box {
-                width: 100%;
-                margin-bottom: 1rem;
+            
+            .terminal-body {
+                padding: 15px;
+                height: 350px;
             }
         }
     </style>
 </head>
-
 <body>
-    <div class="particles" id="particles"></div>
-
-    <div class="container animate__animated animate__fadeIn">
-        <h1>Quantum Speed Test</h1>
-        <p class="description">Measure your internet connection speed with our advanced multi-threaded testing
-            technology</p>
-
-        <div class="speed-test-container">
-            <div class="speedometer">
-                <div class="speedometer-circle">
-                    <div class="speedometer-fill" id="speedometerFill"></div>
-                    <div class="speedometer-inner">
-                        <div class="speed-value" id="speedValue">0</div>
-                        <div class="speed-unit">Mbps</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="speed-labels">
-                <div class="speed-label">Slow</div>
-                <div class="speed-label">Medium</div>
-                <div class="speed-label">Fast</div>
-            </div>
-
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-
-            <div class="status-message" id="statusMessage">Ready to test your connection</div>
-
-            <button class="btn" id="startTest">Start Speed Test</button>
-
-            <div class="test-info">
-                <div class="info-box">
-                    <div class="info-title">Download Speed</div>
-                    <div class="info-value" id="downloadSpeed">0 Mbps</div>
-                </div>
-                <div class="info-box">
-                    <div class="info-title">Upload Speed</div>
-                    <div class="info-value" id="uploadSpeed">0 Mbps</div>
-                </div>
-                <div class="info-box">
-                    <div class="info-title">Ping</div>
-                    <div class="info-value" id="pingValue">0 ms</div>
-                </div>
-                <div class="info-box">
-                    <div class="info-title">Jitter</div>
-                    <div class="info-value" id="jitterValue">0 ms</div>
-                </div>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-btn btn-red"></div>
+            <div class="terminal-btn btn-yellow"></div>
+            <div class="terminal-btn btn-green"></div>
+            <div class="terminal-title">TERMINAL SPEED TEST v3.0</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <div class="output">Welcome to Quantum Speed Test Terminal</div>
+            <div class="output">Type "sudo speedtest --start" or click button below</div>
+            <div class="output" style="margin-top: 30px;">
+                <span class="prompt">root@quantum:~#</span>
+                <span class="command typed" id="command-line"></span>
             </div>
         </div>
     </div>
 
-    <footer>
-        &copy; 2025 Quantum Speed Test | All Rights Reserved
-    </footer>
+    <button class="start-btn" id="startTest">INITIATE SPEED TEST</button>
+
+    <footer style="
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    background: linear-gradient(transparent, rgba(0,0,0,0.3));
+">
+    © 2025 Internet Speed Test | Designed by Shivam Dhamejani
+</footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Create particles
-            createParticles();
-
-            // Updated test files with CORS-enabled endpoints
-            const testFiles = [
-                { url: 'https://speed.cloudflare.com/__down?bytes=1000000', size: 1 }, // 1MB
-                { url: 'https://speed.cloudflare.com/__down?bytes=5000000', size: 5 }, // 5MB
-                { url: 'https://speed.cloudflare.com/__down?bytes=10000000', size: 10 } // 10MB
-            ];
-
-            // Upload test endpoint
-            const uploadEndpoint = 'https://httpbin.org/post'; // Still using httpbin for upload
-
-            const startTestBtn = document.getElementById('startTest');
-            const speedValue = document.getElementById('speedValue');
-            const downloadSpeed = document.getElementById('downloadSpeed');
-            const uploadSpeed = document.getElementById('uploadSpeed');
-            const pingValue = document.getElementById('pingValue');
-            const jitterValue = document.getElementById('jitterValue');
-            const progressBar = document.getElementById('progressBar');
-            const statusMessage = document.getElementById('statusMessage');
-            const speedometerFill = document.getElementById('speedometerFill');
-
+        document.addEventListener('DOMContentLoaded', function() {
+            const terminal = document.getElementById('terminal');
+            const startBtn = document.getElementById('startTest');
+            const commandLine = document.getElementById('command-line');
             let testInProgress = false;
-            let maxDownloadSpeed = 0;
-            let maxUploadSpeed = 0;
-            let pingResults = [];
-
-            startTestBtn.addEventListener('click', async function () {
+            
+            // Optimized test files (single larger file for accuracy)
+            const downloadTestFile = { 
+                url: 'https://speed.cloudflare.com/__down?bytes=20000000', // 20MB single test
+                size: 20
+            };
+            
+            const uploadEndpoint = 'https://httpbin.org/post';
+            const uploadTestSize = 10; // 10MB upload test
+            
+            function typeText(element, text, speed, callback) {
+                let i = 0;
+                element.innerHTML = '';
+                element.classList.add('typed');
+                const typing = setInterval(() => {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        element.classList.remove('typed');
+                        clearInterval(typing);
+                        if (callback) callback();
+                    }
+                }, speed);
+            }
+            
+            function addLine(text, prompt = 'root@quantum:~# ', className = '') {
+                const line = document.createElement('div');
+                line.className = 'output ' + className;
+                
+                if (prompt) {
+                    const promptSpan = document.createElement('span');
+                    promptSpan.className = 'prompt';
+                    promptSpan.textContent = prompt;
+                    line.appendChild(promptSpan);
+                }
+                
+                const textSpan = document.createElement('span');
+                textSpan.className = 'command';
+                textSpan.textContent = text;
+                line.appendChild(textSpan);
+                
+                terminal.appendChild(line);
+                terminal.scrollTop = terminal.scrollHeight;
+                return textSpan;
+            }
+            
+            function addOutput(text, className = '') {
+                const output = document.createElement('div');
+                output.className = 'output ' + className;
+                output.textContent = text;
+                terminal.appendChild(output);
+                terminal.scrollTop = terminal.scrollHeight;
+                return output;
+            }
+            
+            function showSpeedResult(label, speed) {
+                const result = document.createElement('div');
+                result.className = 'output speed-result';
+                
+                const labelSpan = document.createElement('span');
+                labelSpan.textContent = label + ': ';
+                labelSpan.style.color = 'var(--text)';
+                result.appendChild(labelSpan);
+                
+                const valueSpan = document.createElement('span');
+                valueSpan.textContent = speed.toFixed(2) + ' Mbps';
+                valueSpan.style.color = 'var(--primary)';
+                valueSpan.style.fontWeight = 'bold';
+                result.appendChild(valueSpan);
+                
+                const bar = document.createElement('div');
+                bar.className = 'speed-bar';
+                bar.style.width = Math.min(speed / 100 * 100, 100) + '%';
+                result.appendChild(bar);
+                
+                terminal.appendChild(result);
+                terminal.scrollTop = terminal.scrollHeight;
+            }
+            
+            function startTest() {
                 if (testInProgress) return;
-
                 testInProgress = true;
-                startTestBtn.disabled = true;
-                startTestBtn.textContent = 'Testing...';
-                resetUI();
+                startBtn.disabled = true;
+                
+                // Clear previous results
+                while (terminal.children.length > 3) {
+                    terminal.removeChild(terminal.lastChild);
+                }
+                
+                typeText(commandLine, 'sudo speedtest --start --turbo', 50, () => {
+                    setTimeout(() => {
+                        addOutput('\n[!] ADMIN PRIVILEGES GRANTED', 'status');
+                        addOutput('Initializing high-speed quantum measurement...\n');
+                        
+                        testDownload();
+                    }, 500);
+                });
+            }
+            
+            async function testDownload() {
+                addOutput('[1/2] Running TURBO DOWNLOAD test...', 'status');
+                
+                const progress = addOutput(`  Testing with 20MB file... `);
+                const progressText = document.createElement('span');
+                progressText.className = 'progress-text';
+                progress.appendChild(progressText);
+
+                // Add terminal loading bar
+                const loadingBar = document.createElement('div');
+                loadingBar.className = 'terminal-loading';
+                const loadingBarInner = document.createElement('div');
+                loadingBarInner.className = 'terminal-loading-bar';
+                loadingBar.appendChild(loadingBarInner);
+                progress.appendChild(loadingBar);
+
+                // Add analyzing text
+                const analyzing = document.createElement('span');
+                analyzing.className = 'analyzing-text';
+                analyzing.innerHTML = 'Analyzing <span class="analyzing-dots"></span>';
+                progress.appendChild(analyzing);
 
                 try {
-                    // Measure ping first
-                    await measurePing();
-
-                    // Measure download speed
-                    maxDownloadSpeed = await measureSpeed('download', testFiles);
-                    updateSpeedometer(maxDownloadSpeed);
-                    downloadSpeed.textContent = `${maxDownloadSpeed.toFixed(2)} Mbps`;
-
-                    // Measure upload speed
-                    maxUploadSpeed = await measureSpeed('upload', testFiles);
-                    uploadSpeed.textContent = `${maxUploadSpeed.toFixed(2)} Mbps`;
-
-                    // Calculate jitter
-                    calculateJitter();
-
-                    statusMessage.textContent = 'Test completed successfully!';
-                } catch (error) {
-                    console.error('Speed test error:', error);
-                    statusMessage.textContent = 'Error during test. Please try again.';
-                } finally {
-                    testInProgress = false;
-                    startTestBtn.disabled = false;
-                    startTestBtn.textContent = 'Run Test Again';
-                }
-            });
-
-            async function measurePing() {
-                statusMessage.textContent = 'Measuring ping...';
-                progressBar.style.width = '10%';
-
-                pingResults = [];
-                const pingTestUrl = 'https://httpbin.org/get';
-
-                for (let i = 0; i < 5; i++) {
+                    const fileSizeBytes = downloadTestFile.size * 1024 * 1024;
                     const startTime = performance.now();
+                    
+                    await downloadFile(downloadTestFile.url, (loaded, total) => {
+                        const percent = (loaded / total * 100).toFixed(1);
+                        progressText.textContent = `${percent}%`;
+                        loadingBarInner.style.width = `${percent}%`;
+                    });
+                    
+                    const endTime = performance.now();
+                    const duration = (endTime - startTime) / 1000;
+                    const speed = (fileSizeBytes * 8) / (duration * 1024 * 1024);
+                    
+                    // Finalize loading display
+                    loadingBarInner.style.width = '100%';
+                    loadingBarInner.style.background = 'var(--primary)';
+                    progressText.textContent = `COMPLETE (${speed.toFixed(2)} Mbps)`;
+                    analyzing.textContent = 'Done!';
+                    
+                    showSpeedResult('DOWNLOAD SPEED', speed);
+                    
+                    await new Promise(resolve => setTimeout(resolve, 800));
+                    testUpload(speed);
+                } catch (error) {
+                    loadingBarInner.style.background = 'var(--accent)';
+                    progressText.textContent = 'ERROR';
+                    analyzing.textContent = 'Failed!';
+                    testComplete();
+                }
+            }
+
+            async function testUpload(downloadSpeed) {
+                addOutput('\n[2/2] Running TURBO UPLOAD test...', 'status');
+                
+                const progress = addOutput(`  Uploading 10MB file... `);
+                const progressText = document.createElement('span');
+                progressText.className = 'progress-text';
+                progress.appendChild(progressText);
+
+                // Add terminal loading bar
+                const loadingBar = document.createElement('div');
+                loadingBar.className = 'terminal-loading';
+                const loadingBarInner = document.createElement('div');
+                loadingBarInner.className = 'terminal-loading-bar';
+                loadingBar.appendChild(loadingBarInner);
+                progress.appendChild(loadingBar);
+
+                // Add analyzing text
+                const analyzing = document.createElement('span');
+                analyzing.className = 'analyzing-text';
+                analyzing.innerHTML = 'Analyzing <span class="analyzing-dots"></span>';
+                progress.appendChild(analyzing);
+
+                try {
+                    const fileSizeBytes = uploadTestSize * 1024 * 1024;
+                    const testData = generateRandomData(uploadTestSize);
+                    const startTime = performance.now();
+                    
+                    await uploadFile(testData, uploadEndpoint, (loaded, total) => {
+                        const percent = (loaded / total * 100).toFixed(1);
+                        progressText.textContent = `${percent}%`;
+                        loadingBarInner.style.width = `${percent}%`;
+                    });
+                    
+                    const endTime = performance.now();
+                    const duration = (endTime - startTime) / 1000;
+                    const speed = (fileSizeBytes * 8) / (duration * 1024 * 1024);
+                    
+                    // Finalize loading display
+                    loadingBarInner.style.width = '100%';
+                    loadingBarInner.style.background = 'var(--primary)';
+                    progressText.textContent = `COMPLETE (${speed.toFixed(2)} Mbps)`;
+                    analyzing.textContent = 'Done!';
+                    
+                    showSpeedResult('UPLOAD SPEED', speed);
+                    
+                    await new Promise(resolve => setTimeout(resolve, 800));
+                    testPing(downloadSpeed, speed);
+                } catch (error) {
+                    loadingBarInner.style.background = 'var(--accent)';
+                    progressText.textContent = 'ERROR';
+                    analyzing.textContent = 'Failed!';
+                    testComplete();
+                }
+            }
+            
+            async function testPing(downloadSpeed, uploadSpeed) {
+                addOutput('\n[3/3] Running PING test...', 'status');
+                
+                const pingTestUrl = 'https://httpbin.org/get';
+                let pingSum = 0;
+                let validPings = 0;
+                
+                // Quick ping test (3 attempts)
+                for (let i = 0; i < 3; i++) {
+                    const progress = addOutput(`  Ping attempt ${i+1}... `);
+                    const progressText = document.createElement('span');
+                    progressText.className = 'progress-text';
+                    progress.appendChild(progressText);
+                    
                     try {
+                        const startTime = performance.now();
                         await fetch(pingTestUrl, {
                             method: 'GET',
                             cache: 'no-store',
@@ -493,111 +568,90 @@
                         });
                         const endTime = performance.now();
                         const ping = endTime - startTime;
-                        pingResults.push(ping);
-
-                        // Update UI
-                        pingValue.textContent = `${ping.toFixed(2)} ms`;
-                        progressBar.style.width = `${10 + (i * 5)}%`;
-                        await new Promise(resolve => setTimeout(resolve, 500));
+                        
+                        pingSum += ping;
+                        validPings++;
+                        progressText.textContent = `${ping.toFixed(2)} ms`;
                     } catch (error) {
-                        console.error('Ping test error:', error);
+                        progressText.textContent = 'TIMEOUT';
                     }
+                    
+                    await new Promise(resolve => setTimeout(resolve, 300));
                 }
-
-                // Calculate average ping
-                const avgPing = pingResults.reduce((sum, ping) => sum + ping, 0) / pingResults.length;
-                pingValue.textContent = `${avgPing.toFixed(2)} ms`;
+                
+                const avgPing = validPings > 0 ? pingSum / validPings : 0;
+                
+                const result = document.createElement('div');
+                result.className = 'output speed-result';
+                
+                const labelSpan = document.createElement('span');
+                labelSpan.textContent = 'PING: ';
+                labelSpan.style.color = 'var(--text)';
+                result.appendChild(labelSpan);
+                
+                const valueSpan = document.createElement('span');
+                valueSpan.textContent = avgPing.toFixed(2) + ' ms';
+                valueSpan.style.color = 'var(--primary)';
+                valueSpan.style.fontWeight = 'bold';
+                result.appendChild(valueSpan);
+                
+                terminal.appendChild(result);
+                
+                addOutput('\n[!] QUANTUM SPEED TEST COMPLETE', 'status');
+                addOutput(`► Download: ${downloadSpeed.toFixed(2)} Mbps`);
+                addOutput(`► Upload: ${uploadSpeed.toFixed(2)} Mbps`);
+                addOutput(`► Ping: ${avgPing.toFixed(2)} ms`);
+                addOutput('\nType "sudo speedtest --start" to run again\n');
+                
+                testComplete();
             }
-
-            function calculateJitter() {
-                if (pingResults.length < 2) return 0;
-
-                let jitter = 0;
-                for (let i = 1; i < pingResults.length; i++) {
-                    jitter += Math.abs(pingResults[i] - pingResults[i - 1]);
-                }
-                jitter /= (pingResults.length - 1);
-
-                jitterValue.textContent = `${jitter.toFixed(2)} ms`;
-                return jitter;
+            
+            function testComplete() {
+                testInProgress = false;
+                startBtn.disabled = false;
             }
-
-            async function measureSpeed(type, files) {
-                statusMessage.textContent = `Measuring ${type} speed...`;
-
-                let totalBytes = 0;
-                let totalTime = 0;
-                let maxSpeed = 0;
-
-                const progressIncrement = 60 / files.length;
-                let currentProgress = type === 'download' ? 20 : 70;
-
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const fileSizeBytes = file.size * 1024 * 1024; // Convert MB to bytes
-
-                    try {
-                        const startTime = performance.now();
-
-                        if (type === 'download') {
-                            await downloadFile(file.url);
-                        } else {
-                            await uploadFile(generateRandomData(file.size));
-                        }
-
-                        const endTime = performance.now();
-                        const duration = (endTime - startTime) / 1000; // Convert to seconds
-                        const speed = (fileSizeBytes * 8) / (duration * 1024 * 1024); // Mbps
-
-                        totalBytes += fileSizeBytes;
-                        totalTime += duration;
-
-                        if (speed > maxSpeed) {
-                            maxSpeed = speed;
-                        }
-
-                        // Update UI
-                        if (type === 'download') {
-                            speedValue.textContent = speed.toFixed(2);
-                            updateSpeedometer(speed);
-                        }
-
-                        currentProgress += progressIncrement;
-                        progressBar.style.width = `${currentProgress}%`;
-
-                        await new Promise(resolve => setTimeout(resolve, 300));
-                    } catch (error) {
-                        console.error(`${type} test error:`, error);
-                    }
-                }
-
-                // Calculate average speed (weighted by file size)
-                const avgSpeed = (totalBytes * 8) / (totalTime * 1024 * 1024);
-                return Math.max(maxSpeed, avgSpeed);
-            }
-
-            async function downloadFile(url) {
+            
+            function downloadFile(url, progressCallback) {
                 return new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', url + '&nocache=' + Date.now(), true);
                     xhr.responseType = 'blob';
+                    
+                    if (progressCallback) {
+                        xhr.onprogress = (event) => {
+                            if (event.lengthComputable) {
+                                progressCallback(event.loaded, event.total);
+                            }
+                        };
+                    }
+                    
                     xhr.onload = () => {
                         if (xhr.status >= 200 && xhr.status < 300) {
-                            resolve();
+                            resolve(xhr.response);
                         } else {
                             reject(new Error(`Download failed with status ${xhr.status}`));
                         }
                     };
+                    
                     xhr.onerror = () => reject(new Error('Download failed'));
                     xhr.send();
                 });
             }
-
-            async function uploadFile(data) {
+            
+            function uploadFile(data, url, progressCallback) {
                 return new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
-                    xhr.open('POST', uploadEndpoint, true);
+                    xhr.open('POST', url, true);
                     xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+                    
+                    if (progressCallback) {
+                        xhr.upload.onprogress = (event) => {
+                            if (event.lengthComputable) {
+                                progressCallback(event.loaded, event.total);
+                            }
+                        };
+                    }
+                    
                     xhr.onload = () => {
                         if (xhr.status >= 200 && xhr.status < 300) {
                             resolve();
@@ -605,46 +659,12 @@
                             reject(new Error(`Upload failed with status ${xhr.status}`));
                         }
                     };
+                    
                     xhr.onerror = () => reject(new Error('Upload failed'));
                     xhr.send(data);
                 });
             }
-
-            function updateSpeedometer(speed) {
-                // Normalize speed to a value between 0 and 1 (assuming 200 Mbps is max for visualization)
-                const normalizedSpeed = Math.min(speed / 200, 1);
-                const rotation = normalizedSpeed * 270 - 135; // -135 to 135 degrees
-                speedometerFill.style.transform = `rotate(${rotation}deg)`;
-
-                // Change color based on speed
-                if (speed < 20) {
-                    speedometerFill.style.background = `conic-gradient(
-                        var(--error) 0% 100%
-                    )`;
-                } else if (speed < 100) {
-                    speedometerFill.style.background = `conic-gradient(
-                        var(--warning) 0% 100%
-                    )`;
-                } else {
-                    speedometerFill.style.background = `conic-gradient(
-                        var(--success) 0% 100%
-                    )`;
-                }
-            }
-
-            function resetUI() {
-                speedValue.textContent = '0';
-                downloadSpeed.textContent = '0 Mbps';
-                uploadSpeed.textContent = '0 Mbps';
-                pingValue.textContent = '0 ms';
-                jitterValue.textContent = '0 ms';
-                progressBar.style.width = '0%';
-                speedometerFill.style.transform = 'rotate(-135deg)';
-                speedometerFill.style.background = `conic-gradient(
-                    rgba(255, 255, 255, 0.3) 0% 100%
-                )`;
-            }
-
+            
             function generateRandomData(sizeInMB) {
                 const size = sizeInMB * 1024 * 1024;
                 const data = new Uint8Array(size);
@@ -653,36 +673,9 @@
                 }
                 return data;
             }
-
-            function createParticles() {
-                const particlesContainer = document.getElementById('particles');
-                const particleCount = window.innerWidth < 768 ? 30 : 50;
-
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-
-                    // Random size between 2px and 6px
-                    const size = Math.random() * 4 + 2;
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-
-                    // Random position
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top = `${Math.random() * 100}%`;
-
-                    // Random animation duration between 10s and 20s
-                    const duration = Math.random() * 10 + 10;
-                    particle.style.animationDuration = `${duration}s`;
-
-                    // Random delay
-                    particle.style.animationDelay = `${Math.random() * 5}s`;
-
-                    particlesContainer.appendChild(particle);
-                }
-            }
+            
+            startBtn.addEventListener('click', startTest);
         });
     </script>
 </body>
-
 </html>
